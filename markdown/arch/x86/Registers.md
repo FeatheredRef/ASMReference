@@ -8,6 +8,14 @@ AX, BX, CX, DX, DI, SI, BP, and SP
 EAX, EBX, ECX, EDX, EDI, ESI, EBP, and ESP
 ### 64-bit
  RAX, RBX, RCX, RDX, RDI, RSI, RBP, RSP, and R8–R15
+
+## SIMD Registers
+Most SIMD (Single Instruction Multiple Data) have specific registers, in regards to AVX, AVX2.0, and AVX512, they are:
+
+- XMM (AVX), 16 bytes
+- YMM (AVX2), 32 bytes
+- ZMM (AVX512), 64 bytes
+
 ## Specific purpose registers
 - SP: Stack pointer
 - SS: Stack segment
@@ -40,7 +48,8 @@ Specifically, AL being the first byte of RAX, AH the second byte of the RAX, AX 
 
 With the caveat that when a REX prefix is present, AH, BH, CH, and DH are inaccessible, replaced by SPL, BPL, SIL, and DIL
 
-In regards to "rN" registers, they allow you to access either a byte, or word. "rNB" for accessing a byte (e.g, r15b), "rNW" for accessing a word (e.g, r15w), "rnD" for accessing a double word (e.g, r15d).
+In regards to "rNX" registers, they allow you to access either a byte, word, or double word. "rNB" for accessing a byte (e.g, r15b), "rNW" for accessing a word (e.g, r15w), "rnD" for accessing a double word (e.g, r15d).
+### OS Registers
 
 There are many registers you cannot or shouldn't use in User Space, as they exists for the OS to handle the machine properly. They being mostly the Table registers. I will not enter in detail, as the documentation focus on user-space programming.
 ## Endian order
