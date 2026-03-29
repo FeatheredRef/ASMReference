@@ -22,8 +22,8 @@
         "disk":         [9, 0, "disk/"],
         "encryption":   [10,0, "encryption/"],
         "hashes":       [11,0,"hashes/"],
-        "C":            [12,0,"C/"],
-        "VM":           [13,0,"VM/"],
+        "c":            [12,0,"c/"],
+        "vm":           [13,0,"vm/"],
         "article":      [14,0,"article/"]
     },
     "texts": {
