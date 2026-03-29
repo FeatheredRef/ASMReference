@@ -1,0 +1,42 @@
+{
+    "StartPath": "markdown/",
+    "dependencies" : ["assets/","statics/"],
+    "Authors": {
+        "0": {
+            "name":   "Theo",
+            "user":   "ttd3v",
+            "social": ["https://github.com/ttd3v"],
+            "pfp":    "https://avatars.githubusercontent.com/u/178332918?v=4"
+        }
+    },
+    "categories": {
+        "ASMREF":       [0, null, "/"],
+        "arch":         [1, 0, "arch/"]
+    },
+    "texts": {
+        "Atomics.md": {
+            "authors":     [0],
+            "desc":        null,
+            "image":       null,
+            "category_id": 1
+        },
+        "OoO.md": {
+            "authors":     [0],
+            "desc":        null,
+            "image":       null,
+            "category_id": 1
+        },
+        "HyperThreading.md": {
+            "authors":     [0],
+            "desc":        null,
+            "image":       null,
+            "category_id": 1
+        },
+        "Registers.md": {
+            "authors":     [0],
+            "desc":        null,
+            "image":       null,
+            "category_id": 1
+        }
+    }
+}
