@@ -11,7 +11,20 @@
     },
     "categories": {
         "ASMREF":       [0, null, "/"],
-        "arch":         [1, 0, "arch/"]
+        "arch":         [1, 0, "arch/"],
+        "linux":        [2, 0, "linux/"],
+        "instructions": [3, 0, "instructions/"],
+        "x86":          [4, 3, "instructions/x86/"],
+        "arm":          [5, 3, "instructions/arm/"],
+        "risc-v":       [6, 3, "instructions/risc-v/"],
+        "network":      [7, 0, "network/"],
+        "kernel":       [8, 0, "kernel/"],
+        "disk":         [9, 0, "disk/"],
+        "encryption":   [10,0, "encryption/"],
+        "hashes":       [11,0,"hashes/"],
+        "C":            [12,0,"C/"],
+        "VM":           [13,0,"VM/"],
+        "article":      [14,0,"article/"]
     },
     "texts": {
         "Atomics.md": {
