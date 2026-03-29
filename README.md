@@ -36,7 +36,7 @@ No one can contribute to people's articles, nor can these be edited. The authors
 
 # Publishment process
 
-For a person to publish a text into the project, they SHOULD send a request draft. It being done by either sending an email to [theo.ribeiro.5000@gmail.com], or creating an issue with the label "WRITING".
+For a person to publish a text into the project, they SHOULD send a request draft. It being done by either sending an email to [featheredref@protonmail.com], or creating an issue with the label "WRITING".
 
 The draft request MUST be a message which SHALL not be blank, and a linked markdown file for the draft. In the message, the sender SHALL describe in what category the sender wants to publish on. 
 
