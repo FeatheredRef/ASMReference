@@ -69,6 +69,7 @@ fn graph_into(input: &mut Structure, details: &Details, curr: String) {
             input.2.push((k.to_string(), txt, i.authors.clone()));
         }
     }
+
     for (k, i) in details.categories.iter() {
         if let Some(parent) = i.1
             && parent == input.0

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 /*statics*/
 *, *::before, *::after {
     box-sizing: border-box;
@@ -5,10 +6,21 @@
     padding: 0;
 }
 
+*{
+        font-family: "Merriweather", serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+        /*font-variation-settings: "wdth" 100;*/
+}
+
+.empty{
+        opacity: 0.5
+}
+
 html {
     background: #0d0d0d;
     color: #a0a0a0;
-    font-family: ui-sans-serif, system-ui, sans-serif;
     font-size: 15px;
     line-height: 1.7;
 }
@@ -26,7 +38,6 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Courier New', Courier, monospace;
     font-weight: 500;
     color: #f0f0f0;
     line-height: 1.25;

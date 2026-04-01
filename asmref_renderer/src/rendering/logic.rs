@@ -46,10 +46,20 @@ fn render(se: &Structure, directory: &mut Dir, details: &Details) {
 
     index_content.push_str("<a href=\"..\">..</a>");
     se.1.values().for_each(|b| {
-        index_content.push_str(&format!("<a href=\"{}\">{}</a>", b.3.to_lowercase(), b.3));
+        if b.2.is_empty() {
+            index_content.push_str(&format!(
+                "<a class=\"empty\" href=\"{}\">{}</a>",
+                b.3.to_lowercase(),
+                b.3
+            ));
+        } else {
+            index_content.push_str(&format!("<a href=\"{}\">{}</a>", b.3.to_lowercase(), b.3));
+        }
     });
 
-    se.2.iter().for_each(|b| {
+    let mut se2 = se.2.clone();
+    se2.sort_by(|a, b| a.0.to_lowercase().cmp(&b.0.to_lowercase()));
+    se2.iter().for_each(|b| {
         let mut authors_line: String = String::from("</h1><br><div class=\"author-div\">");
         for i in &b.2 {
             if let Some(a) = details.authors.get(&i.to_string())
@@ -91,9 +101,18 @@ fn render(se: &Structure, directory: &mut Dir, details: &Details) {
         "index.html".to_string(),
         format!(PRESET!(), STATICS, index_title, index_content),
     ));
-    se.1.iter().for_each(|(_, b)| {
+
+    let mut se1: Vec<u64> = se.1.keys().copied().collect();
+    se1.sort_by(|a, b| {
+        se.1.get(a)
+            .unwrap()
+            .3
+            .to_lowercase()
+            .cmp(&se.1.get(b).unwrap().3.to_lowercase())
+    });
+    se1.iter().for_each(|b| {
         let mut dir = Dir::default();
-        render(b, &mut dir, details);
+        render(se.1.get(b).unwrap(), &mut dir, details);
         directory.sub.push(dir);
     });
 }

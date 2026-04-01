@@ -50,6 +50,12 @@
             "desc":        null,
             "image":       null,
             "category_id": 1
+        },
+        "L-Cache.md": {
+            "authors":     [0],
+            "desc":        null,
+            "image":       null,
+            "category_id": 1
         }
     }
 }
