@@ -5,6 +5,7 @@ use crate::{
 
 const STATICS: &str = r#"
 <link rel="stylesheet" href="/statics/style.css">
+<script type="module" src="/statics/index.js"></script>
 "#;
 
 macro_rules! PRESET {
@@ -21,6 +22,9 @@ macro_rules! PRESET {
 </head>
 <body>
 {}
+<footer>
+<p>asm/reference</p><p>Licensed under: GPL-2.0</p>
+</footer>
 </body>
 </html>
 "#
@@ -45,15 +49,19 @@ fn render(se: &Structure, directory: &mut Dir, details: &Details) {
     index_content.push_str("</h1><div class=\"index\">");
 
     index_content.push_str("<a href=\"..\">..</a>");
-    se.1.values().for_each(|b| {
-        if b.2.is_empty() {
+    let se1: Vec<(bool, String)> =
+        se.1.values()
+            .map(|a| (a.2.is_empty(), a.3.clone()))
+            .collect();
+    se1.into_iter().for_each(|b| {
+        if b.0 {
             index_content.push_str(&format!(
                 "<a class=\"empty\" href=\"{}\">{}</a>",
-                b.3.to_lowercase(),
-                b.3
+                b.1.to_lowercase(),
+                b.1
             ));
         } else {
-            index_content.push_str(&format!("<a href=\"{}\">{}</a>", b.3.to_lowercase(), b.3));
+            index_content.push_str(&format!("<a href=\"{}\">{}</a>", b.1.to_lowercase(), b.1));
         }
     });
 

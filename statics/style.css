@@ -9,9 +9,6 @@
 *{
         font-family: "Merriweather", serif;
         font-optical-sizing: auto;
-        font-weight: <weight>;
-        font-style: normal;
-        /*font-variation-settings: "wdth" 100;*/
 }
 
 .empty{
@@ -188,4 +185,27 @@ tbody td:first-child {
 
 tbody tr:hover td {
     background: #111;
+}
+
+blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    
+    border-left: 4px solid #393939;
+    background-color: rgba(0,0,0,0.2);
+    font-style: italic !important;
+    color: #333;
+
+    line-height: 1.6;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+blockquote footer {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
 }
