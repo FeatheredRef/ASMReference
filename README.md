@@ -13,11 +13,7 @@ Unless I don't notice, I will deny any contribution with the use of AI. Assuming
 
 ## License
 
-This project is licensed under either of:
-
-- [MIT License](LICENSE-MIT)
-- [GNU General Public License v2.0](LICENSE-GPL2)
-- [GNU General Public License v3.0](LICENSE-GPL3)
+This project is licensed under [GNU General Public License v2.0](LICENSE-GPL2.md)
 
 at your option.
 
