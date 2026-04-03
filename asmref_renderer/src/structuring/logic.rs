@@ -11,7 +11,7 @@ pub struct Author {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct Category(pub u64, pub Option<u64>, String); // [id, parent_id, Path]
+pub struct Category(pub u64, pub Option<u64>, String, String); // [id, parent_id, Path, Description]
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Text {
@@ -38,7 +38,8 @@ pub struct Details {
 pub struct Structure(
     pub u64,
     pub HashMap<u64, Structure>,
-    pub Vec<(String, String, Vec<u64>)>,
+    pub Vec<(String, String, Vec<u64>, String)>,
+    pub String,
     pub String,
 );
 pub fn parse_markdown(input: &str) -> String {
@@ -66,7 +67,12 @@ fn graph_into(input: &mut Structure, details: &Details, curr: String) {
             let mut txt = String::new();
             f.read_to_string(&mut txt).unwrap();
             txt = parse_markdown(&txt);
-            input.2.push((k.to_string(), txt, i.authors.clone()));
+            input.2.push((
+                k.to_string(),
+                txt,
+                i.authors.clone(),
+                i.image.clone().unwrap_or(String::new()),
+            ));
         }
     }
 
@@ -74,7 +80,8 @@ fn graph_into(input: &mut Structure, details: &Details, curr: String) {
         if let Some(parent) = i.1
             && parent == input.0
         {
-            let mut my_self = Structure(i.0, HashMap::new(), Vec::new(), k.to_string());
+            let mut my_self =
+                Structure(i.0, HashMap::new(), Vec::new(), k.to_string(), i.3.clone());
             graph_into(&mut my_self, details, i.2.clone());
             input.1.insert(i.0, my_self);
         }
@@ -82,12 +89,13 @@ fn graph_into(input: &mut Structure, details: &Details, curr: String) {
 }
 
 pub fn derive_structure(details: &Details) -> Option<Structure> {
-    let mut root: Structure = Structure(0, HashMap::new(), Vec::new(), String::new());
+    let mut root: Structure =
+        Structure(0, HashMap::new(), Vec::new(), String::new(), String::new());
     let mut found_root = false;
     let mut curr: String = String::new();
     for (k, i) in details.categories.iter() {
         if i.1.is_none() {
-            root = Structure(i.0, HashMap::new(), Vec::new(), k.to_string());
+            root = Structure(i.0, HashMap::new(), Vec::new(), k.to_string(), i.3.clone());
             found_root = true;
             curr = i.2.clone();
         }

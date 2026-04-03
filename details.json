@@ -10,21 +10,21 @@
         }
     },
     "categories": {
-        "ASMREF":       [0, null, "/"],
-        "arch":         [1, 0, "arch/"],
-        "linux":        [2, 0, "linux/"],
-        "instructions": [3, 0, "instructions/"],
-        "x86":          [4, 3, "instructions/x86/"],
-        "arm":          [5, 3, "instructions/arm/"],
-        "risc-v":       [6, 3, "instructions/risc-v/"],
-        "network":      [7, 0, "network/"],
-        "kernel":       [8, 0, "kernel/"],
-        "disk":         [9, 0, "disk/"],
-        "encryption":   [10,0, "encryption/"],
-        "hashes":       [11,0,"hashes/"],
-        "c":            [12,0,"c/"],
-        "vm":           [13,0,"vm/"],
-        "article":      [14,0,"article/"]
+        "ASMREF":       [0,     null,    "/",                   ""],
+        "arch":         [1,     0,       "arch/",               "Directly related to hardware"],
+        "linux":        [2,     0,       "linux/",              "UAPI of linux"],
+        "instructions": [3,     0,       "instructions/",       "ISA"],
+        "x86":          [4,     3,       "instructions/x86/",   "x86-64 ISA"],
+        "arm":          [5,     3,       "instructions/arm/",   "ARM ISA"],
+        "risc-v":       [6,     3,       "instructions/risc-v/","RV ISA"],
+        "network":      [7,     0,       "network/",            "Protocols, sytems, and standards"],
+        "kernel":       [8,     0,       "kernel/",             "Broadly, OS."],
+        "disk":         [9,     0,       "disk/",               "SSDs, HDDs, file-systems, et cetera."],
+        "encryption":   [10,    0,       "encryption/",         "Regarding cryptography"],
+        "hashes":       [11,    0,       "hashes/",             "Regarding hashes"],
+        "c":            [12,    0,       "c/",                  "C programming language"],
+        "vm":           [13,    0,       "vm/",                 "Virtual machines"],
+        "article":      [14,    0,       "article/",            "Articles written by community members"]
     },
     "texts": {
         "Atomics.md": {
@@ -52,6 +52,18 @@
             "category_id": 1
         },
         "L-Cache.md": {
+            "authors":     [0],
+            "desc":        null,
+            "image":       null,
+            "category_id": 1
+        },
+        "MESI.md": {
+            "authors":     [0],
+            "desc":        null,
+            "image": null,
+            "category_id": 1
+        },
+        "Memory.md": {
             "authors":     [0],
             "desc":        null,
             "image":       null,

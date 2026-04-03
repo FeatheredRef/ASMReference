@@ -1,12 +1,7 @@
 use crate::{
-    rendering::style::STYLE,
+    rendering::{self, style::STYLE},
     structuring::logic::{Details, Structure},
 };
-
-const STATICS: &str = r#"
-<link rel="stylesheet" href="/statics/style.css">
-<script type="module" src="/statics/index.js"></script>
-"#;
 
 macro_rules! PRESET {
     () => {
@@ -14,22 +9,206 @@ macro_rules! PRESET {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="icon" href="/assets/icon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-{}
-<title>{}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/statics/style.css" rel="stylesheet">
+        <script type="module" src="/statics/index.js"></script>
+        <title>asm/reference | {}</title>
 </head>
 <body>
-{}
-<footer>
-<p>asm/reference</p><p>Licensed under: GPL-2.0</p>
-</footer>
+        <header>
+                <canvas class="noise"></canvas>
+                <p><a href="/">asm/reference</a></p>
+        </header>
+        <article class="txt">
+        {}
+        </article>
+        <footer>
+                <canvas class="noise"></canvas>
+                <div id="d1">
+                        <p>asm/reference</p>
+                        <p>Licensed under GPL-2.0</p>
+                </div>
+                <div id="d2">
+                        <a href="https://github.com/ttd3v">Github</a>
+                </div>
+        </footer>
+        <script>
+        function applyNoise(canvas) {{
+                const ctx = canvas.getContext("2d");
+                const rect = canvas.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+                const imageData = ctx.createImageData(canvas.width, canvas.height);
+                const data = imageData.data;
+
+                for (let i = 0; i < data.length; i += 4) {{
+                        const value = Math.random() * 255;
+                        data[i] = data[i+1] = data[i+2] = value;
+                        data[i+3] = 255;
+                }}
+
+                ctx.putImageData(imageData, 0, 0);
+        }}
+        document.querySelectorAll(".noise").forEach(applyNoise);
+        </script>
 </body>
 </html>
 "#
     };
 }
+
+const INDEX_PAGE: &str = r#"
+<html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/statics/style.css" rel="stylesheet">
+        <title>asm/reference | %0</title>
+        <script type="module" src="/statics/index.js"></script>
+</head>
+<body>
+        <header>
+                <canvas class="noise" width="775" height="50"></canvas>
+                <p><a href="/">asm/reference</a></p>
+        </header>
+        <article class="txt">
+        <h1>%2</h1>
+        <hr>
+        <main class="index">
+        %1
+        </main>
+        </article>
+        <footer>
+                <canvas class="noise" width="775" height="50"></canvas>
+                <div id="d1">
+                        <p>asm/reference</p>
+                        <p>Licensed under GPL-2.0</p>
+                </div>
+                <div id="d2">
+                        <a href="https://github.com/ttd3v">Github</a>
+                </div>
+        </footer>
+        <script>
+        function applyNoise(canvas) {
+                const ctx = canvas.getContext("2d");
+                const rect = canvas.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+                const imageData = ctx.createImageData(canvas.width, canvas.height);
+                const data = imageData.data;
+
+                for (let i = 0; i < data.length; i += 4) {
+                        const value = Math.random() * 255;
+                        data[i] = data[i+1] = data[i+2] = value;
+                        data[i+3] = 255;
+                }
+
+                ctx.putImageData(imageData, 0, 0);
+        }
+        document.querySelectorAll(".noise").forEach(applyNoise);
+        </script>
+
+</body></html>
+"#;
+
+const LANDING_PAGE: &str = r#"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/statics/style.css" rel="stylesheet">
+        <title>asm/reference</title>
+</head>
+<body>
+        <header>
+                <canvas class="noise"></canvas>
+                <p>asm/reference</p>
+        </header>
+        <section id="s1">
+                <h1>Low-level knowledge,<br><span id="text-thing">accessible.</span></h1>
+        </section>
+        <hr>
+        <section id="s2">
+                <canvas class="noise"></canvas>
+                <br>
+                <h2>Categories</h2>
+                <br>
+                <nav>
+                       {} 
+                </nav>
+        </section>
+        <hr>
+        <footer>
+                <canvas class="noise"></canvas>
+                <div id="d1">
+                        <p>asm/reference</p>
+                        <p>Licensed under GPL-2.0</p>
+                </div>
+                <div id="d2">
+                        <a href="https://github.com/ttd3v">Github</a>
+                </div>
+        </footer>
+        <script>
+        const texts = [
+                "accessible.","simple.","free.", "open."
+        ];
+        const el = document.getElementById("text-thing");
+
+        let textIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        const TYPE_SPEED = 80;
+        const DELETE_SPEED = 20;
+        const PAUSE_TIME = 2200;
+
+        function tick() {
+            const current = texts[textIndex];
+
+            if (!deleting) {
+                charIndex++;
+                el.textContent = current.slice(0, charIndex);
+
+                if (charIndex === current.length) {
+                    deleting = true;
+                    return setTimeout(tick, PAUSE_TIME);
+                }
+            } else {
+                charIndex--;
+                el.textContent = current.slice(0, charIndex);
+
+                if (charIndex === 0) {
+                    deleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                }
+            }
+
+            setTimeout(tick, deleting ? DELETE_SPEED : TYPE_SPEED);
+        }
+
+        tick();
+        function applyNoise(canvas) {
+                const ctx = canvas.getContext("2d");
+                const rect = canvas.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+                const imageData = ctx.createImageData(canvas.width, canvas.height);
+                const data = imageData.data;
+
+                for (let i = 0; i < data.length; i += 4) {
+                        const value = Math.random() * 255;
+                        data[i] = data[i+1] = data[i+2] = value;
+                        data[i+3] = 255;
+                }
+
+                ctx.putImageData(imageData, 0, 0);
+        }
+        document.querySelectorAll(".noise").forEach(applyNoise);
+        </script>
+</body>
+</html>
+"#;
 
 const NOT_FOUND: (&str, &str) = ("404.html", "<h1>404</h1>");
 
@@ -38,16 +217,35 @@ pub struct Dir {
     pub sub: Vec<Dir>,
     pub name: String,
     pub files: Vec<(String, String)>,
+    pub desc: String,
+}
+
+#[allow(clippy::useless_conversion)]
+fn first_upper(s: &str) -> String {
+    let mut a = false;
+    let b: String = s
+        .chars()
+        .into_iter()
+        .map(|c| {
+            if !a {
+                a = true;
+                return c.to_ascii_uppercase();
+            }
+            c
+        })
+        .collect();
+    b
 }
 
 fn render(se: &Structure, directory: &mut Dir, details: &Details) {
     directory.name = se.3.clone();
-    let index_title = format!("ASMReference | {}/index", se.3);
-    let mut index_content: String = String::from("<h1>");
-
+    let index_title = format!("{}/index", se.3);
+    let mut index_template = INDEX_PAGE.to_string();
+    let mut index_content: String = String::from("");
+    index_template = index_template
+        .replace("%0", &index_title)
+        .replace("%2", &first_upper(&se.3));
     index_content.push_str(&se.3);
-    index_content.push_str("</h1><div class=\"index\">");
-
     index_content.push_str("<a href=\"..\">..</a>");
     let se1: Vec<(bool, String)> =
         se.1.values()
@@ -68,7 +266,7 @@ fn render(se: &Structure, directory: &mut Dir, details: &Details) {
     let mut se2 = se.2.clone();
     se2.sort_by(|a, b| a.0.to_lowercase().cmp(&b.0.to_lowercase()));
     se2.iter().for_each(|b| {
-        let mut authors_line: String = String::from("</h1><br><div class=\"author-div\">");
+        let mut authors_line: String = String::from("");
         for i in &b.2 {
             if let Some(a) = details.authors.get(&i.to_string())
                 && let Some(lll) = a.social.first()
@@ -79,7 +277,6 @@ fn render(se: &Structure, directory: &mut Dir, details: &Details) {
                 ));
             }
         }
-        authors_line.push_str("</div><br>");
 
         let title: String =
             b.0.clone()
@@ -88,7 +285,22 @@ fn render(se: &Structure, directory: &mut Dir, details: &Details) {
                 .to_string()
                 .replace(" ", "-")
                 .to_ascii_lowercase();
-        let content = format!(PRESET!(), STATICS, title, b.1).replacen("</h1>", &authors_line, 1);
+        let content = format!(PRESET!(), title, b.1)
+            .replacen(
+                "</h1>",
+                r#"</h1>
+                    <hr>
+                    <img src="%img"></img><br>
+                    <section>
+                        <div class="author-div">
+                            %authors
+                        </div>
+                    </section>
+                "#,
+                1,
+            )
+            .replacen("%img", &b.3, 1)
+            .replacen("%authors", &authors_line, 1);
 
         index_content.push_str(&format!(
             "<a href=\"{}\">{}</a>",
@@ -104,11 +316,10 @@ fn render(se: &Structure, directory: &mut Dir, details: &Details) {
         ));
     });
 
-    index_content.push_str("</div>");
-    directory.files.push((
-        "index.html".to_string(),
-        format!(PRESET!(), STATICS, index_title, index_content),
-    ));
+    let p = index_template
+        .replacen("%0", &index_title, 1)
+        .replacen("%1", &index_content, 1);
+    directory.files.push(("index.html".to_string(), p));
 
     let mut se1: Vec<u64> = se.1.keys().copied().collect();
     se1.sort_by(|a, b| {
@@ -119,7 +330,10 @@ fn render(se: &Structure, directory: &mut Dir, details: &Details) {
             .cmp(&se.1.get(b).unwrap().3.to_lowercase())
     });
     se1.iter().for_each(|b| {
-        let mut dir = Dir::default();
+        let mut dir = rendering::logic::Dir {
+            desc: se.1.get(b).unwrap().4.clone(),
+            ..Default::default()
+        };
         render(se.1.get(b).unwrap(), &mut dir, details);
         directory.sub.push(dir);
     });
@@ -138,5 +352,28 @@ pub fn pre_render(se: &Structure, details: &Details) -> Dir {
         .push((String::from(NOT_FOUND.0), String::from(NOT_FOUND.1)));
     root.sub.push(statics);
 
+    let _ = root.files.extract_if(0.., |a| a.0 == "index.html");
+
+    let mut something = String::new();
+
+    for i in root.sub.iter() {
+        let mut txts = 0;
+        txts += i.files.len();
+        txts -= 1;
+        something.push_str(&format!(
+            r#"
+            <a href="/{}">
+                <h3>{}</h3>
+                <p>{}<br><sub>{} Articles</sub></p>
+            </a>
+            "#,
+            &i.name, &i.name, i.desc, txts
+        ));
+    }
+
+    root.files.push((
+        "index.html".to_string(),
+        LANDING_PAGE.replace("{}", &something).to_string(),
+    ));
     root
 }
