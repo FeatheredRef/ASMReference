@@ -1,6 +1,6 @@
 {
     "StartPath": "markdown/",
-    "dependencies" : ["assets/","statics/"],
+    "dependencies" : ["assets/","statics/","_headers"],
     "Authors": {
         "0": {
             "name":   "Theo",
@@ -68,6 +68,12 @@
             "desc":        null,
             "image":       null,
             "category_id": 1
+        },
+        "assemblers.md": {
+            "authors":     [0],
+            "desc":       null,
+            "image": null,
+            "category_id": 3
         }
     }
 }
