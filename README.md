@@ -66,7 +66,7 @@ Even while no writing format is ensured, nor enforced, its good to recommend a s
 # Categories
 - **arch**: Directly related with hardware
 - **linux**: Directly related with the linux, specifically the interaction Userpace with kernel, or specifically kernel internals.
-- **instructions**: Instructions of CPUs of an arch, if you pick this category, you must state the architecture (x86, ARM, Risc-V, et cetera).
+- **instructions**: Assembly and Instructions of CPUs of an arch, if you pick this category, you must state the architecture (x86, ARM, Risc-V, et cetera).
 - **network**: Specifically what is directly related with network protocols, and/or systems.
 - **kernel**: Regarding kernels, kernel development.
 - **disk**: Regarding disk (HDDs, SSDs, et cetera), and file systems.
