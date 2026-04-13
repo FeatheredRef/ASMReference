@@ -7,10 +7,6 @@ This project is supposed to make available a compilation of specific data in reg
 Feel free to write for this project, you may write an article at any time, or a specific topic if missing. 
 You may either make a pull request, or send me an email.
 
-## Regarding AI
-
-Unless I don't notice, I will deny any contribution with the use of AI. Assuming AI is bad, the exception "I don't notice" is because if I really do not perceive any AI trait, the quality might be good enough.
-
 ## License
 
 This project is licensed under [GNU General Public License v2.0](LICENSE-GPL2.md)
@@ -32,7 +28,7 @@ No one can contribute to people's articles, nor can these be edited. The authors
 
 # Publishment process
 
-For a person to publish a text into the project, they SHOULD send a request draft. It being done by either sending an email to [featheredref@protonmail.com], or creating an issue with the label "WRITING".
+For a person to publish a text into the project or contribute to an existing text, they SHOULD send a request draft. It being done by either sending an email to featheredref@protonmail.com, or creating an issue with the label "PUBLISHING" or "CONTRIBUTING".
 
 The draft request MUST be a message which SHALL not be blank, and a linked markdown file for the draft. In the message, the sender SHALL describe in what category the sender wants to publish on. 
 
@@ -62,6 +58,28 @@ Even while no writing format is ensured, nor enforced, its good to recommend a s
 - **Introduction**: It helps the reader to ground their view, using it as a definition of direction and subject may be useful.
 - **Terminology**: If you have a writing bias, or have non-standard wording and/or expressions, defining their meaning in this section might be good for clarity.
 - **Actual content**: At this "place" you write what you intend to.
+
+# How texts quality are verified
+
+As mentioned, prior to release a test, you must release a draft. In order to avoid friction in this process, you should verify if the text matches the requieriments covered in this section.
+
+### Proper grammar
+Grammar errors SHOULD invalidate your draft, unless the misspelling is a defined terminology, thus just not standard instead of an actual error. This terminology SHALL be defined once, and clearly.
+
+### Ambiguity
+Ambiguous text SHOULD invalidate your draft, unless it is ambiguous because of vendor-locked-in data that make incoherent the proper development of the text.
+
+### Bad language
+Bad language SHALL invalidade your draft. It being anything that may run out of the common sense, for example yet not being limited to violence and illegal material.
+
+### Poorly structured text
+All HAVE to have a proper prose, structure. If the draft have an unreasonably poor prose, it will be invalidated.
+
+
+# Use of Generative AI
+Preferably, don't use it. If you do, as long as the quality is decent, it may be merged. Be aware that it is seen peevishly. Even so, some topics may benefit from the use of it. And the structure which the AI should follow must be released as an specification and priorly drafted and published as an article.
+
+When a model generate an article, the authorship does not goes to the person who made the prompt, but to the model which generated. This being to avoid rewarding people that generate out of stupidity, instead of reasonability.
 
 # Categories
 - **arch**: Directly related with hardware
