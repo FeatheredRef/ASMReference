@@ -24,54 +24,60 @@
         "hashes":       [11,    0,       "hashes/",             "Regarding hashes"],
         "c":            [12,    0,       "c/",                  "C programming language"],
         "vm":           [13,    0,       "vm/",                 "Virtual machines"],
-        "article":      [14,    0,       "article/",            "Articles written by community members"]
+        "article":      [14,    0,       "article/",            ""]
     },
     "texts": {
         "Atomics.md": {
             "authors":     [0],
-            "desc":        null,
+            "desc":        "Explains atomic operations for thread-safe programming, ensuring serialized and ordered execution in multi-core and hyper-threading environments.",
             "image":       null,
             "category_id": 1
         },
         "OoO.md": {
             "authors":     [0],
-            "desc":        null,
+            "desc":        "Discusses Out-of-Order execution as a CPU performance optimization technique to overcome frequency scaling limitations and improve instruction throughput.",
             "image":       null,
             "category_id": 1
         },
         "HyperThreading.md": {
             "authors":     [0],
-            "desc":        null,
+            "desc":        "Introduces hyper-threading as a CPU parallelism technique enabling multiple thread execution on a single core, maximizing resource utilization.",
             "image":       null,
             "category_id": 1
         },
         "Registers.md": {
             "authors":     [0],
-            "desc":        null,
+            "desc":        "Covers CPU registers as ultra-fast storage for state management, arithmetic, and logical operations, detailing x86-32 and x86-64 register sizes.",
             "image":       null,
             "category_id": 1
         },
         "L-Cache.md": {
             "authors":     [0],
-            "desc":        null,
+            "desc":        "Describes L-Cache (Level Cache) as a critical on-chip memory component reducing RAM access latency, enhancing CPU efficiency and performance.",
             "image":       null,
             "category_id": 1
         },
         "MESI.md": {
             "authors":     [0],
-            "desc":        null,
+            "desc":        "Details the MESI protocol for cache coherence in multi-threaded systems, preventing cache line incoherence across multiple CPU caches.",
             "image": null,
             "category_id": 1
         },
         "Memory.md": {
             "authors":     [0],
-            "desc":        null,
+            "desc":        "Explains RAM management in computing, covering memory segmentation into 4 KiB pages, heap vs. stack, and Linux process memory ownership.",
             "image":       null,
+            "category_id": 1
+        },
+        "ASLR.md": {
+            "authors":     [0],
+            "desc":     "Describes Address Space Layout Randomization (ASLR) as a security technique that randomizes memory addresses, mitigating memory-based exploits and attacks.",
+            "image": null,
             "category_id": 1
         },
         "assemblers.md": {
             "authors":     [0],
-            "desc":       null,
+            "desc":       "Explores assemblers as tools translating assembly language into machine code or object files, detailing popular options like GAS, MASM, NASM, and FASM for modern development workflows.",
             "image": null,
             "category_id": 3
         }

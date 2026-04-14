@@ -38,7 +38,7 @@ pub struct Details {
 pub struct Structure(
     pub u64,
     pub HashMap<u64, Structure>,
-    pub Vec<(String, String, Vec<u64>, String)>,
+    pub Vec<(String, String, Vec<u64>, String, String)>,
     pub String,
     pub String,
 );
@@ -72,6 +72,7 @@ fn graph_into(input: &mut Structure, details: &Details, curr: String) {
                 txt,
                 i.authors.clone(),
                 i.image.clone().unwrap_or(String::new()),
+                i.desc.clone().unwrap_or(String::new()),
             ));
         }
     }

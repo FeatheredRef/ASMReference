@@ -1,5 +1,7 @@
 # OoO
 
+> Out of order exeuction; Runs instruction in parallel if possible, predict branches.
+
 Back in the day, CPUs were very slow, their clock frequency was between 250 MHz and 1 GHz at the start. For the chips to become faster, Intel started increasing the clock frequency.
 
 But eventually, CPUs couldn't get faster with this method, as the higher the frequency, with the same feature size, higher the voltage required and heat generated. Since even if the feature sizes were as small as possible the clock wouldn't rise much while maintaining the tolerable specs, they reached a "brick-wall".

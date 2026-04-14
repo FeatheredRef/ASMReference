@@ -1,13 +1,14 @@
 # Memory
 
 > Data in ram
+
 > Note: This text will cover memory assuming the OS is linux
 
 Obviously, in computing we use memory. It being used to ensure, enforce, keep, and/or manage states, memory is what RAM keeps. It is usually partitioned as heap, and [stack](</arch/stack>).
 
 The memory is segmented in N pages of four kibibytes (4096 bytes), when an instance allocate memory, `(N+4095)/4096` (N=bytes allocated) pages have the "ownership" set to the process.
 
-A memory allocation in linux have protection flags, and flags. The protection flags define if pages can be written, readen, or executed. As for flags, define the mapping. A table with both flags, and protection flags is bellow.
+A memory allocation in linux have protection flags, and mapping flags. The protection flags define if pages can be written, readen, or executed. As for mapping flags, it configure the map. A table with both flags, and protection flags is bellow.
 
 | Protection Flag | Description            |
 |-----------------|------------------------|

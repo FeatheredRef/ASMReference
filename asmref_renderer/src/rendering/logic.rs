@@ -14,6 +14,8 @@ macro_rules! PRESET {
         <link href="/statics/style.css" rel="stylesheet">
         <script type="module" src="/statics/index.js"></script>
         <title>asm/reference | {}</title>
+        <meta property="og:title" content="{}">
+        <meta property="og:description" content="{}">
 </head>
 <body>
         <header>
@@ -30,7 +32,7 @@ macro_rules! PRESET {
                         <p>Licensed under GPL-2.0</p>
                 </div>
                 <div id="d2">
-                        <a href="https://github.com/ttd3v">Github</a>
+                        <a href="https://github.com/FeatheredRef/ASMReference">Github</a>
                 </div>
         </footer>
         <script>
@@ -64,6 +66,8 @@ const INDEX_PAGE: &str = r#"
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/statics/style.css" rel="stylesheet">
         <title>asm/reference | %0</title>
+        <meta property="og:title" content="%0">
+        <meta property="og:description" content="%$">
         <script type="module" src="/statics/index.js"></script>
 </head>
 <body>
@@ -85,7 +89,7 @@ const INDEX_PAGE: &str = r#"
                         <p>Licensed under GPL-2.0</p>
                 </div>
                 <div id="d2">
-                        <a href="https://github.com/ttd3v">Github</a>
+                        <a href="https://github.com/FeatheredRef/ASMReference">Github</a>
                 </div>
         </footer>
         <script>
@@ -146,7 +150,7 @@ const LANDING_PAGE: &str = r#"
                         <p>Licensed under GPL-2.0</p>
                 </div>
                 <div id="d2">
-                        <a href="https://github.com/ttd3v">Github</a>
+                        <a href="https://github.com/FeatheredRef/ASMReference">Github</a>
                 </div>
         </footer>
         <script>
@@ -236,15 +240,48 @@ fn first_upper(s: &str) -> String {
         .collect();
     b
 }
+pub fn generate_sitemap(root: &Dir, base_url: &str) -> String {
+    let mut xml = String::from(
+        r#"<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">"#,
+    );
 
+    fn walk(dir: &Dir, base_url: &str, current_path: &str, xml: &mut String) {
+        // Add files in current directory
+        for (file_name, _) in &dir.files {
+            if file_name == "index.html" {
+                xml.push_str(&format!(
+                    "\n  <url><loc>{}{}/</loc></url>",
+                    base_url, current_path
+                ));
+            } else {
+                let name = file_name.strip_suffix(".html").unwrap_or(file_name);
+                xml.push_str(&format!(
+                    "\n  <url><loc>{}{}/{}</loc></url>",
+                    base_url, current_path, name
+                ));
+            }
+        }
+        // Recurse into subdirectories
+        for sub in &dir.sub {
+            let new_path = format!("{}/{}", current_path, sub.name.to_lowercase());
+            walk(sub, base_url, &new_path, xml);
+        }
+    }
+
+    walk(root, base_url, "", &mut xml);
+    xml.push_str("\n</urlset>");
+    xml
+}
 fn render(se: &Structure, directory: &mut Dir, details: &Details) {
     directory.name = se.3.clone();
-    let index_title = format!("{}/index", se.3);
+    let index_title = se.3.clone();
     let mut index_template = INDEX_PAGE.to_string();
     let mut index_content: String = String::from("");
     index_template = index_template
         .replace("%0", &index_title)
-        .replace("%2", &first_upper(&se.3));
+        .replace("%2", &first_upper(&se.3))
+        .replace("%$", &directory.desc);
     index_content.push_str(&se.3);
     index_content.push_str("<a href=\"..\">..</a>");
     let se1: Vec<(bool, String)> =
@@ -278,14 +315,15 @@ fn render(se: &Structure, directory: &mut Dir, details: &Details) {
             }
         }
 
-        let title: String =
-            b.0.clone()
+        let title: String = first_upper(
+            &b.0.clone()
                 .strip_suffix(".md")
                 .unwrap_or(&b.0)
                 .to_string()
                 .replace(" ", "-")
-                .to_ascii_lowercase();
-        let content = format!(PRESET!(), title, b.1)
+                .to_ascii_lowercase(),
+        );
+        let content = format!(PRESET!(), title, title, b.4, b.1)
             .replacen(
                 "</h1>",
                 r#"</h1>
@@ -360,6 +398,9 @@ pub fn pre_render(se: &Structure, details: &Details) -> Dir {
         let mut txts = 0;
         txts += i.files.len();
         txts -= 1;
+        if txts == 0 {
+            continue;
+        }
         something.push_str(&format!(
             r#"
             <a href="/{}">
@@ -375,5 +416,11 @@ pub fn pre_render(se: &Structure, details: &Details) -> Dir {
         "index.html".to_string(),
         LANDING_PAGE.replace("{}", &something).to_string(),
     ));
+    let xml = generate_sitemap(&root, "/");
+    root.files.push(("sitemap.xml".to_string(), xml));
+    let robots_content =
+        "User-agent: *\nAllow: /\nSitemap: https://asm-reference.pages.dev/sitemap.xml";
+    root.files
+        .push((String::from("robots.txt"), String::from(robots_content)));
     root
 }
