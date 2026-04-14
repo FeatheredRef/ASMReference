@@ -30,9 +30,9 @@ For a person to publish a text into the project or contribute to an existing tex
 
 The draft request MUST be a message which SHALL not be blank, and a linked markdown file for the draft. In the message, the sender SHALL describe in what category the sender wants to publish on. 
 
-If the project does not have the sender registered as an author, the sender MUST say which valid social link SHALL be linked to him, along the username, name (don't have to be the full name), and an image url for it to be a profile picture. 
+If the project does not have the sender registered as an author, the sender SHOULD say which valid social link SHALL be linked to him, along the username, name (don't have to be the full name), and an image url for it to be a profile picture. In case none is provided, the person verifying the message SHALL infer; No authorship if no inference can be done reasonably.
 
-Case the sender sends an incoherent category, and refuse to change it, the request SHALL be ignored (closed if it is a github issue).
+Case the sender sends an incoherent category, the person verifying the request will change it.
 
 Once the request is sent, a collaborator will review it. If the draft have factually problematic text, and/or grammar issues, these SHALL be reported to the sender, who must edit and reply with another version.
 
@@ -47,6 +47,8 @@ Upon publishment, if the request is a github issue, it might be closed.
 If any mutation happen, a new release of the web version SHALL be released in the period between a day, and three months. Generally a delay (more than a day to release) may occur if there is too many on-going requests, and the collaborators think that delaying a release is worth doing.
 
 A delay may also happen if changes are being done into the website's renderer.
+
+    Releases are supposed to have factual data only, thus one will only be made once a certainty that the new versions of texts are accurate. Even so, it's not impossible for a lack of precision or blunt error to pass unnoticed. In these cases, if you notice some, please raise an issue or send an email to featheredref@protonmail.com in order to report the problem.
 
 # Writing format
 
@@ -71,13 +73,15 @@ Ambiguous text SHOULD invalidate your draft, unless it is ambiguous because of v
 Bad language SHALL invalidade your draft. It being anything that may run out of the common sense, for example yet not being limited to violence and illegal material.
 
 ### Poorly structured text
-All HAVE to have a proper prose, structure. If the draft have an unreasonably poor prose, it will be invalidated.
+All texts SHALL have a proper prose, structure. If the draft have an unreasonably poor prose, it will be invalidated.
 
+### Factual problems
+All texts must be factual and accurate, if the draft have issues in this regard, it will be invalidated.
 
 # Use of Generative AI
 Preferably, don't use it. If you do, as long as the quality is decent, it may be merged. Be aware that it is seen peevishly. Even so, some topics may benefit from the use of it. And the structure which the AI should follow must be released as an specification and priorly drafted and published as an article.
 
-When a model generate an article, the authorship does not goes to the person who made the prompt, but to the model which generated. This being to avoid rewarding people that generate out of stupidity, instead of reasonability.
+When a model generate an article, the authorship does not goes to the person who made the prompt. This being to avoid rewarding people that generate out of stupidity/laziness, instead of reasonability.
 
 # Categories
 - **arch**: Directly related with hardware
@@ -89,7 +93,7 @@ When a model generate an article, the authorship does not goes to the person who
 - **encryption**: Regarding encryption
 - **hashes**: Regarding hashes
 - **algorithms**: Regarding algorithms
-- **C**: Regarding the C Programming language
+- **C**: Regarding C
 - **compilers**: Regarding compilers
 - **VM**: Regarding virtual machines
-- **article**: Keeping the mentioned regarding authorship, this is category free, as long as it is coherent to be published in this project.
+- **article**: This is category free of topic, as long as it is coherent to be published in this project. I recommend it to publish specifications, actual articles, et cetera.

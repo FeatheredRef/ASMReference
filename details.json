@@ -63,18 +63,6 @@
             "image": null,
             "category_id": 1
         },
-        "Memory.md": {
-            "authors":     [0],
-            "desc":        "Explains RAM management in computing, covering memory segmentation into 4 KiB pages, heap vs. stack, and Linux process memory ownership.",
-            "image":       null,
-            "category_id": 1
-        },
-        "ASLR.md": {
-            "authors":     [0],
-            "desc":     "Describes Address Space Layout Randomization (ASLR) as a security technique that randomizes memory addresses, mitigating memory-based exploits and attacks.",
-            "image": null,
-            "category_id": 1
-        },
         "assemblers.md": {
             "authors":     [0],
             "desc":       "Explores assemblers as tools translating assembly language into machine code or object files, detailing popular options like GAS, MASM, NASM, and FASM for modern development workflows.",
@@ -97,12 +85,6 @@
         "multi-threading.md": {
                 "authors":      [0],
                 "desc": "multi-threading",
-                "image": null,
-                "category_id": 1
-        },
-        "stack.md":{
-                "authors":      [0],
-                "desc":         "stack",
                 "image": null,
                 "category_id": 1
         }
