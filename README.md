@@ -48,7 +48,7 @@ If any mutation happen, a new release of the web version SHALL be released in th
 
 A delay may also happen if changes are being done into the website's renderer.
 
-    Releases are supposed to have factual data only, thus one will only be made once a certainty that the new versions of texts are accurate. Even so, it's not impossible for a lack of precision or blunt error to pass unnoticed. In these cases, if you notice some, please raise an issue or send an email to featheredref@protonmail.com in order to report the problem.
+Releases are supposed to have factual data only, thus one will only be made once a certainty that the new versions of texts are accurate. Even so, it's not impossible for a lack of precision or blunt error to pass unnoticed. In these cases, if you notice some, please raise an issue or send an email to featheredref@protonmail.com in order to report the problem.
 
 # Writing format
 
