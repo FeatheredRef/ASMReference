@@ -11,8 +11,6 @@ You may either make a pull request, or send me an email.
 
 This project is licensed under [GNU General Public License v2.0](LICENSE-GPL2.md)
 
-at your option.
-
 ---
 
 
