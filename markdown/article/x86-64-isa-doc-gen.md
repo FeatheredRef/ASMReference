@@ -1,8 +1,5 @@
 # x86-64 ISA Documentation generation
 
-Author: ttd3v
-Date: 13-4-2026
-
 ## Abstract
 
 How a model shall generate documentation for the x86-64 ISA

@@ -81,11 +81,30 @@
             "image": null,
             "category_id": 3
         },
-        "x86-64_ISA_Documentation_generation.md": {
+
+        "x86-64-isa-doc-gen.md": {
             "authors":     [0],
             "desc": "AI-driven x86-64 ISA documentation, with human validation",
             "image": null,
             "category_id": 14
+        },
+        "SIMD.md": {
+                "authors":      [0],
+                "desc": "SIMD(Single Instruction Multiple Data)",
+                "image": null,
+                "category_id": 1
+        },
+        "multi-threading.md": {
+                "authors":      [0],
+                "desc": "multi-threading",
+                "image": null,
+                "category_id": 1
+        },
+        "stack.md":{
+                "authors":      [0],
+                "desc":         "stack",
+                "image": null,
+                "category_id": 1
         }
     }
 }
