@@ -1,0 +1,42 @@
+name: Release — Build and Deploy
+
+on:
+  release:
+    types: [published]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            asmref_renderer/target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('asmref_renderer/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
+
+      - name: Build renderer
+        working-directory: asmref_renderer
+        run: cargo build --release
+
+      - name: Run renderer
+        run: ./asmref_renderer/target/release/asmref_renderer
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy build/ASMREF --project-name=asm-reference
+
