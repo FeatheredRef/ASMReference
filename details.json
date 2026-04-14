@@ -80,6 +80,12 @@
             "desc":       "Explores assemblers as tools translating assembly language into machine code or object files, detailing popular options like GAS, MASM, NASM, and FASM for modern development workflows.",
             "image": null,
             "category_id": 3
+        },
+        "x86-64_ISA_Documentation_generation.md": {
+            "authors":     [0],
+            "desc": "AI-driven x86-64 ISA documentation, with human validation",
+            "image": null,
+            "category_id": 14
         }
     }
 }
