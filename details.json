@@ -14,9 +14,9 @@
         "arch":         [1,     0,       "arch/",               "Directly related to hardware"],
         "linux":        [2,     0,       "linux/",              "UAPI of linux"],
         "instructions": [3,     0,       "instructions/",       "Assembly related, and arch's instructions"],
-        "x86":          [4,     3,       "x86/",                "x86-64 ISA"],
-        "arm":          [5,     3,       "arm/",                "ARM ISA"],
-        "risc-v":       [6,     3,       "risc-v/",             "RV ISA"],
+        "x86":          [4,     3,       "instructions/x86/",   "x86"],
+        "arm":          [5,     3,       "instructions/arm/",   "ARM"],
+        "risc-v":       [6,     3,       "instructions/risc-v/","RV"],
         "network":      [7,     0,       "network/",            "Protocols, systems, and standards"],
         "kernel":       [8,     0,       "kernel/",             "Broadly, OS."],
         "disk":         [9,     0,       "disk/",               "SSDs, HDDs, file-systems, et cetera."],
@@ -705,13 +705,6 @@
         },
 
 
-        "CMPPD.md": {
-                "authors":      [],
-                "desc": "",
-                "image": null,
-                "category_id": 4
-        },
-
 
         "CMPPS.md": {
                 "authors":      [],
@@ -1064,13 +1057,6 @@
                 "category_id": 4
         },
 
-
-        "DIVPD.md": {
-                "authors":      [],
-                "desc": "",
-                "image": null,
-                "category_id": 4
-        },
 
 
         "DIVPS.md": {
@@ -9338,14 +9324,6 @@
 
 
         "ENCLU[EDECCSSA].md": {
-                "authors":      [],
-                "desc": "",
-                "image": null,
-                "category_id": 4
-        },
-
-
-        "ENCLU[EENTER].md": {
                 "authors":      [],
                 "desc": "",
                 "image": null,
