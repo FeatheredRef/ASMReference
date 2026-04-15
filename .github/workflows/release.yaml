@@ -3,6 +3,9 @@ name: Release — Build and Deploy
 on:
   release:
     types: [published]
+  workflow_run:
+    types: [requested]
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
