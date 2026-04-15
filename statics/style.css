@@ -279,7 +279,7 @@ footer > div > a{
 
 blockquote {
     margin: 1.5rem 0;
-    padding: 1rem 1.5rem;
+    padding: 1rem 10px;
     
     border-left: 4px solid #393939;
     background-color: rgba(0,0,0,0.2);
@@ -298,10 +298,6 @@ blockquote footer {
     font-size: 0.9rem;
     color: #666;
     font-style: italic;
-}
-
-tbody tr:hover td {
-    background: #111;
 }
 
 table {
