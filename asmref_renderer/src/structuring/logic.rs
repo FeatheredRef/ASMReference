@@ -63,7 +63,13 @@ fn graph_into(input: &mut Structure, details: &Details, curr: String) {
     for (k, i) in details.texts.iter() {
         if i.category_id == input.0 {
             let path = format!("{}/{}/{}", details.start_path, curr, k);
-            let mut f = File::open(path).unwrap();
+            let mut f = match File::open(path.clone()) {
+                Ok(a) => a,
+                Err(e) => {
+                    println!("path: {}", path);
+                    panic!("{}", e);
+                }
+            };
             let mut txt = String::new();
             f.read_to_string(&mut txt).unwrap();
             txt = parse_markdown(&txt);

@@ -76,6 +76,12 @@
             "image": null,
             "category_id": 14
         },
+        "quality-control.md": {
+            "authors":     [0],
+            "desc": "Quality Control Standard — Version 0",
+            "image": null,
+            "category_id": 14
+        },
         "SIMD.md": {
                 "authors":      [0],
                 "desc": "SIMD(Single Instruction Multiple Data)",

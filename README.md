@@ -24,27 +24,27 @@ No one can contribute to people's articles, nor can these be edited. The authors
 
 > `details.json` is a file that keeps track of categories, authors, texts, and some render related instances.
 
-# Publishment process
+# Publication process
 
 For a person to publish a text into the project or contribute to an existing text, they SHOULD send a request draft. It being done by either sending an email to featheredref@protonmail.com, or creating an issue with the label "PUBLISHING" or "CONTRIBUTING".
 
 The draft request MUST be a message which SHALL not be blank, and a linked markdown file for the draft. In the message, the sender SHALL describe in what category the sender wants to publish on. 
 
-If the project does not have the sender registered as an author, the sender SHOULD say which valid social link SHALL be linked to him, along the username, name (don't have to be the full name), and an image url for it to be a profile picture. In case none is provided, the person verifying the message SHALL infer; No authorship if no inference can be done reasonably.
+If the project does not have the sender registered as an author, the sender SHOULD say which valid social link SHALL be linked to him, along the username, name (don't have to be the full name), and an image URL for it to be a profile picture. In case none is provided, the person verifying the message SHALL infer; No authorship if no inference can be done reasonably.
 
-Case the sender sends an incoherent category, the person verifying the request will change it.
+In the event that the sender sends an incoherent category, the person verifying the request will change it.
 
-Once the request is sent, a collaborator will review it. If the draft have factually problematic text, and/or grammar issues, these SHALL be reported to the sender, who must edit and reply with another version.
+Once the request is sent, a collaborator will review it. If the draft has factually problematic text, and/or grammar issues, these SHALL be reported to the sender, who must edit and reply with another version.
 
 If the draft state doesn't have grammar issues, and factually problematic text, the text will be inserted into the project. It being only publicly available on a web reference, after a release.
 
-Upon publishment, if the request is a github issue, it might be closed.
+Upon publication, if the request is a GitHub issue, it might be closed.
 
-> A markdown h1 ("#") is mandatory on the start of a text/draft, as the renderer uses it as a reference.
+> A markdown "h1" ("#") is mandatory on the start of a text/draft, as the renderer uses it as a reference.
 
 # Releases
 
-If any mutation happen, a new release of the web version SHALL be released in the period between a day, and three months. Generally a delay (more than a day to release) may occur if there is too many on-going requests, and the collaborators think that delaying a release is worth doing.
+If any change happens, a new release of the web version SHALL be released in the period between a day, and three months. Generally a delay (more than a day to release) may occur if there is too many on-going requests, and the collaborators think that delaying a release is worth doing.
 
 A delay may also happen if changes are being done into the website's renderer.
 
@@ -54,38 +54,24 @@ Releases are supposed to have factual data only, thus one will only be made once
 
 Even while no writing format is ensured, nor enforced, its good to recommend a standard for writers to follow. It being, in the given order:
 
-- **Abstract**: Start with a brief explanation of the text's contents, so a reader can know what they are reading about. Since this project is a reference, these abstracts may help queries.
+- **Abstract**: Start with a brief explanation of the text's contents, so a reader can know what they are reading about. Since this project is a reference, these abstracts may improve searchability/queries.
 - **Introduction**: It helps the reader to ground their view, using it as a definition of direction and subject may be useful.
 - **Terminology**: If you have a writing bias, or have non-standard wording and/or expressions, defining their meaning in this section might be good for clarity.
 - **Actual content**: At this "place" you write what you intend to.
 
-# How texts quality are verified
+# How text quality is verified
+They are tested against the [Quality Control Standard](</markdown/articles/quality-control.md>), published only if "Tolerable" or "Satisfactory".
 
-As mentioned, prior to release a test, you must release a draft. In order to avoid friction in this process, you should verify if the text matches the requieriments covered in this section.
-
-### Proper grammar
-Grammar errors SHOULD invalidate your draft, unless the misspelling is a defined terminology, thus just not standard instead of an actual error. This terminology SHALL be defined once, and clearly.
-
-### Ambiguity
-Ambiguous text SHOULD invalidate your draft, unless it is ambiguous because of vendor-locked-in data that make incoherent the proper development of the text.
-
-### Bad language
-Bad language SHALL invalidade your draft. It being anything that may run out of the common sense, for example yet not being limited to violence and illegal material.
-
-### Poorly structured text
-All texts SHALL have a proper prose, structure. If the draft have an unreasonably poor prose, it will be invalidated.
-
-### Factual problems
-All texts must be factual and accurate, if the draft have issues in this regard, it will be invalidated.
+> If the reasons your text lose points is minor spelling errors, the reviewer may fix those for you, therefore maybe increasing your points.
 
 # Use of Generative AI
-Preferably, don't use it. If you do, as long as the quality is decent, it may be merged. Be aware that it is seen peevishly. Even so, some topics may benefit from the use of it. And the structure which the AI should follow must be released as an specification and priorly drafted and published as an article.
+Preferably, don't use it. If you do, as long as the quality is decent, it may be merged. Be aware that it is seen peevishly. Even so, some topics may benefit from the use of it. And the structure which the AI should follow must be released as an specification and previously drafted and published as an article.
 
-When a model generate an article, the authorship does not goes to the person who made the prompt. This being to avoid rewarding people that generate out of stupidity/laziness, instead of reasonability.
+When a model generates an article, the authorship does not go to the person who made the prompt. This being to avoid rewarding people that generate out of stupidity/laziness, instead of reasonability.
 
 # Categories
 - **arch**: Directly related with hardware
-- **linux**: Directly related with the linux, specifically the interaction Userpace with kernel, or specifically kernel internals.
+- **linux**: Directly related with the Linux, specifically the interaction user-space with kernel, or specifically kernel internals.
 - **instructions**: Assembly and Instructions of CPUs of an arch, if you pick this category, you must state the architecture (x86, ARM, Risc-V, et cetera).
 - **network**: Specifically what is directly related with network protocols, and/or systems.
 - **kernel**: Regarding kernels, kernel development.
