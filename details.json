@@ -1,6 +1,6 @@
 {
     "StartPath": "markdown/",
-    "dependencies" : ["assets/","statics/","_headers"],
+    "dependencies" : ["assets/","statics/","_headers","favicon.ico"],
     "Authors": {
         "0": {
             "name":   "Theo",
