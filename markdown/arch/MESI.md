@@ -6,8 +6,8 @@ With the introduction of [multi-threading](</arch/multi-threading>), multiple pr
 
 MESI being the protocol that ensures the global correctness. There are four states that a cache line can have, they being Modified, Exclusive, Shared, and Invalid. The state "modified" is when the cache has been mutated, but changes not flushed towards [memory](</arch/memory>), "exclusive" when only a core has the memory region in the cache, "shared" when multiple cores have a [memory](</arch/memory>) region in cache, and invalid when the state in the cache is not coherent in comparison with [memory](</arch/memory>).
 
-When a operation uses [memory](</arch/memory>) in the state "invalid", a cache miss is issued and the cache updated from the [memory](</arch/memory>) state. As for the other states, I did find reliable data in regards to the behavior. Thus I assume it's undocumented behavior.
+When an operation uses [memory](</arch/memory>) in the state "invalid", a cache miss is issued and the cache updated from the [memory](</arch/memory>) state. As for the other states, I did find reliable data in regards to the behavior. Thus I assume it's undocumented behavior.
 
 This state mechanism is ensured by a core analysing other core's memory bus, therefore if a mutation is flushed into [memory](</arch/memory>), the [L-Cache](</arch/l-cache>) of the other cores will be set invalid.
 
-In conclusion, MESI ensures [L-Cache](</arch/l-cache.md) is coherent to the [memory](</arch/memory>) state. I couldn't document the protocol with much detail, because of the lack of primary source documentation. 
+In conclusion, MESI ensures [L-Cache](</arch/l-cache>) is coherent to the [memory](</arch/memory>) state.

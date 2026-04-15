@@ -1,6 +1,6 @@
 # OoO
 
-> Out of order exeuction; Runs instruction in parallel if possible, predict branches.
+> Out of order execution; Runs instruction in parallel if possible, predict branches.
 
 Back in the day, CPUs were very slow, their clock frequency was between 250 MHz and 1 GHz at the start. For the chips to become faster, Intel started increasing the clock frequency.
 
@@ -19,5 +19,3 @@ Deep branch prediction, and speculative execution, allow the chip to analyse the
 As for Dynamic Data Flow Analysis, it is what allows the CPU to both amortize and mitigate the cost of an expensive instruction. If the data-model being followed by the instructions allows them to run in parallel, the CPU might do so.
 
 In conclusion, OoO is a feature in CPUs that significantly increases their efficiency. You can leverage this by avoiding using inter-dependence on variables in code, and by decreasing the branch count.
-
-Worth mentioning that this specific article is strictly Intel biased. Since I personally couldn't find any specific source regarding OoO from AMD, I did not mention it. Even so, AMD CPUs do have the feature in their x86-64 chips.

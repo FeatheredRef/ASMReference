@@ -31,68 +31,90 @@
             "authors":     [0],
             "desc":        "Explains atomic operations for thread-safe programming, ensuring serialized and ordered execution in multi-core and hyper-threading environments.",
             "image":       null,
-            "category_id": 1
+            "category_id": 1,
+            "tags": [],
+            "quality": 3
         },
         "OoO.md": {
             "authors":     [0],
             "desc":        "Discusses Out-of-Order execution as a CPU performance optimization technique to overcome frequency scaling limitations and improve instruction throughput.",
             "image":       null,
-            "category_id": 1
+            "category_id": 1,
+            "tags": [],
+            "quality": 3
         },
         "HyperThreading.md": {
             "authors":     [0],
             "desc":        "Introduces hyper-threading as a CPU parallelism technique enabling multiple thread execution on a single core, maximizing resource utilization.",
             "image":       null,
-            "category_id": 1
+            "category_id": 1,
+            "tags": [],
+            "quality": 3
         },
         "Registers.md": {
             "authors":     [0],
             "desc":        "Covers CPU registers as ultra-fast storage for state management, arithmetic, and logical operations, detailing x86-32 and x86-64 register sizes.",
             "image":       null,
-            "category_id": 1
+            "category_id": 1,
+            "tags": [],
+            "quality": 3
         },
         "L-Cache.md": {
             "authors":     [0],
             "desc":        "Describes L-Cache (Level Cache) as a critical on-chip memory component reducing RAM access latency, enhancing CPU efficiency and performance.",
             "image":       null,
-            "category_id": 1
+            "category_id": 1,
+            "tags": [],
+            "quality": 3
         },
         "MESI.md": {
             "authors":     [0],
             "desc":        "Details the MESI protocol for cache coherence in multi-threaded systems, preventing cache line incoherence across multiple CPU caches.",
             "image": null,
-            "category_id": 1
+            "category_id": 1,
+            "tags": [],
+            "quality": 3
         },
         "assemblers.md": {
             "authors":     [0],
             "desc":       "Explores assemblers as tools translating assembly language into machine code or object files, detailing popular options like GAS, MASM, NASM, and FASM for modern development workflows.",
             "image": null,
-            "category_id": 3
+            "category_id": 3,
+            "tags": [],
+            "quality": 3
         },
 
         "x86-64-isa-doc-gen.md": {
             "authors":     [0],
             "desc": "AI-driven x86-64 ISA documentation, with human validation",
             "image": null,
-            "category_id": 14
+            "category_id": 14,
+            "tags": [],
+            "quality": 3
         },
         "quality-control.md": {
             "authors":     [0],
             "desc": "Quality Control Standard — Version 0",
             "image": null,
-            "category_id": 14
+            "category_id": 14,
+            "tags": [],
+            "quality": 3
         },
         "SIMD.md": {
                 "authors":      [0],
                 "desc": "SIMD(Single Instruction Multiple Data)",
                 "image": null,
-                "category_id": 1
+                "category_id": 1,
+                "tags": [],
+                "quality": 3
         },
         "multi-threading.md": {
                 "authors":      [0],
                 "desc": "multi-threading",
                 "image": null,
-                "category_id": 1
+                "category_id": 1,
+                "tags": [],
+                "quality": 3
         },
         
         "AAA.md": {
