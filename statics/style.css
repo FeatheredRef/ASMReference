@@ -12,6 +12,7 @@ html, body{
         width: 100%;
         height: 100%;
         background-color: #000000;
+        color: var(--ink-0)
 }
 html{
         height: auto !important;
@@ -216,7 +217,7 @@ section:is(#s2) > nav > a > p{
         font-size: 2rem;
         color: var(--ink-1);
 }
-p{
+p,ul{
         color: var(--ink-0)
 }
 a{
