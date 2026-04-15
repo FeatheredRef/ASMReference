@@ -309,7 +309,7 @@ fn render(se: &Structure, directory: &mut Dir, details: &Details) {
                 && let Some(lll) = a.social.first()
             {
                 authors_line.push_str(&format!(
-                    "<a href=\"{}\" class=\"author-line\"><img src=\"{}\"></img><p>{}</p></a>",
+                    "<a href=\"{}\" class=\"author-line\"><img alt=\"an image\" src=\"{}\"></img><p>{}</p></a>",
                     lll, a.pfp, a.user
                 ));
             }
