@@ -60,7 +60,7 @@ Even while no writing format is ensured, nor enforced, its good to recommend a s
 - **Actual content**: At this "place" you write what you intend to.
 
 # How text quality is verified
-They are tested against the [Quality Control Standard](</markdown/articles/quality-control.md>), published only if "Tolerable" or "Satisfactory".
+They are tested against the [Quality Control Standard](</markdown/article/quality-control.md>), published only if "Tolerable" or "Satisfactory".
 
 > If the reasons your text lose points is minor spelling errors, the reviewer may fix those for you, therefore maybe increasing your points.
 
