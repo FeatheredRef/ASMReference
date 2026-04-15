@@ -217,7 +217,7 @@ section:is(#s2) > nav > a > p{
         font-size: 2rem;
         color: var(--ink-1);
 }
-p,ul{
+p,ul,li{
         color: var(--ink-0)
 }
 a{
